@@ -1,5 +1,9 @@
 package com.wakeup.wakeup;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import com.wakeup.wakeup.resume.Resume;
 
 import org.springframework.boot.CommandLineRunner;
@@ -31,9 +35,32 @@ public class WakeupApplication {
 		// Resume.class);
 		Resume resume = restTemplate.getForObject("https://pebback.herokuapp.com/peb/resumes/1", Resume.class);
 		System.out.println("Resume vaut:= " + resume.getResumeId());
-		Resume resume2 = restTemplate.getForObject("https://edificationbiblique.com", Resume.class);
-		System.out.println("Resume vaut 2:= " + resume2);
 
+		// String status2 = getStatus("https://edificationbiblique.com");
+		String status2 = getStatus("https://pebf.herokuapp.com/");
+		System.out.println("edificationbiblique.com is : " + status2);
+
+	}
+
+	public static String getStatus(String url) throws IOException {
+
+		String result = "";
+		try {
+			URL urlObj = new URL(url);
+			HttpURLConnection con = (HttpURLConnection) urlObj.openConnection();
+			con.setRequestMethod("GET");
+			// Set connection timeout
+			con.setConnectTimeout(3000);
+			con.connect();
+
+			int code = con.getResponseCode();
+			if (code == 200) {
+				result = "On";
+			}
+		} catch (Exception e) {
+			result = "Off";
+		}
+		return result;
 	}
 
 }
