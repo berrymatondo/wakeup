@@ -50,7 +50,7 @@ public class WakeupApplication {
 			HttpURLConnection con = (HttpURLConnection) urlObj.openConnection();
 			con.setRequestMethod("GET");
 			// Set connection timeout
-			con.setConnectTimeout(3000);
+			con.setConnectTimeout(120000);
 			con.connect();
 
 			int code = con.getResponseCode();
