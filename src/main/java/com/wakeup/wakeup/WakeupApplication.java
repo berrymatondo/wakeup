@@ -31,6 +31,8 @@ public class WakeupApplication {
 		// Resume.class);
 		Resume resume = restTemplate.getForObject("https://pebback.herokuapp.com/peb/resumes/1", Resume.class);
 		System.out.println("Resume vaut:= " + resume.getResumeId());
+		Resume resume2 = restTemplate.getForObject("https://edificationbiblique.com", Resume.class);
+		System.out.println("Resume vaut 2:= " + resume2);
 
 	}
 
