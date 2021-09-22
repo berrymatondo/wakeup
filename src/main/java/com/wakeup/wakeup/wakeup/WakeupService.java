@@ -21,4 +21,8 @@ public class WakeupService {
         // Resume.class);
         System.out.println("Resume vaut:= " + resume.getResumeId());
     }
+
+    public String wakeUp() {
+        return "wakeup";
+    }
 }

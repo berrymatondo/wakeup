@@ -37,8 +37,8 @@ public class WakeupApplication {
 		System.out.println("Resume vaut:= " + resume.getResumeId());
 
 		// String status2 = getStatus("https://edificationbiblique.com");
-		String status2 = getStatus("https://pebf.herokuapp.com/");
-		System.out.println("edificationbiblique.com is : " + status2);
+		// String status2 = getStatus("https://www.google.com");
+		// System.out.println("edificationbiblique.com is : " + status2);
 
 	}
 
@@ -50,7 +50,7 @@ public class WakeupApplication {
 			HttpURLConnection con = (HttpURLConnection) urlObj.openConnection();
 			con.setRequestMethod("GET");
 			// Set connection timeout
-			con.setConnectTimeout(120000);
+			con.setConnectTimeout(3000);
 			con.connect();
 
 			int code = con.getResponseCode();
