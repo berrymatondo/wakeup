@@ -37,8 +37,8 @@ public class WakeupApplication {
 		System.out.println("Resume vaut:= " + resume.getResumeId());
 
 		// String status2 = getStatus("https://edificationbiblique.com");
-		// String status2 = getStatus("https://www.google.com");
-		// System.out.println("edificationbiblique.com is : " + status2);
+		String status2 = getStatus("https://pebf.herokuapp.com/");
+		System.out.println("edificationbiblique.com is : " + status2);
 
 	}
 
